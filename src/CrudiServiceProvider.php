@@ -30,7 +30,7 @@ class CrudiServiceProvider extends ServiceProvider
         require __DIR__.'/routes/macro.php';
 
         $this->publishes([
-            __DIR__.'/config/crudi_menu.php' => app_path('crudi_menu.php'),
+            __DIR__.'/config/menus/' => app_path('menus'),
         ]);
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'crudi');
