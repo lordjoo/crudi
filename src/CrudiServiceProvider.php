@@ -13,7 +13,9 @@ class CrudiServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        $this->mergeConfigFrom(
+            __DIR__.'/config/crudi.php', 'crudi'
+        );
     }
 
     /**
@@ -32,6 +34,7 @@ class CrudiServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/config/menus/' => app_path('menus'),
         ]);
+        $this->publishes(__DIR__.'/config/crudi.php',config_path('crudi.php'));
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'crudi');
     }

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tiba Clinic  @stack('title')</title>
+    <title>{{ config('crudi.site_name') }}  @stack('title')</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('vendor/crudi/css/all.css')}}">
     <!-- Bootstrap core CSS -->
@@ -32,6 +32,7 @@
             position:absolute;
         }
     </style>
+    <link rel="icon" href="{{ config('crudi.favicon_path') }}">
 </head>
 
 <body class="grey lighten-3">
