@@ -1,6 +1,6 @@
 @php
-$menu_file = config('menu_dir_oath').'/base.php';
-if (file_exists($menu_file)){
+$menu_file = config('crudi.menu_dir_path').'/base.php';
+if (file_exists($menu_file)) {
     $menu = require_once $menu_file;
 } else {
     $menu = [];
