@@ -1,6 +1,6 @@
 @php
     if (!isset($menu_file)) {
-        $menu = (file_exists(app_path('menus/base.php'))) ? require_once app_path('crudi_menu.php') : [];
+        $menu = (file_exists(app_path('menus/base.php'))) ? require_once app_path('menus/base.php') : [];
     } else {
         $menu = (file_exists($menu_file)) ? require_once $menu_file : [];
     }
