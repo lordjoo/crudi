@@ -1,9 +1,10 @@
 @php
-    if (!isset($menu_file)) {
-        $menu = (file_exists(app_path('menus/base.php'))) ? require_once app_path('menus/base.php') : [];
-    } else {
-        $menu = (file_exists($menu_file)) ? require_once $menu_file : [];
-    }
+$menu_file = config('menu_dir_oath').'/base.php';
+if (file_exists($menu_file)){
+    $menu = require_once $menu_file;
+} else {
+    $menu = [];
+}
 @endphp
 <!-- Sidebar -->
 <div id="side-nav" class="sidebar-fixed position-fixed p-md-3 p-0">
