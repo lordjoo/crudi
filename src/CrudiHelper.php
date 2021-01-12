@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 class CrudiHelper
 {
     private $model;
-    public function __construct($model)
+    private $storage_folder;
+    public function __construct($model,$storage_folder)
     {
         $this->model = $model;
+        $this->storage_folder = $storage_folder;
     }
 
     public function store(Request $request)
