@@ -3,7 +3,7 @@
     "description": "A Laravel CRUD System with Admin Panel",
     "type": "library",
     "license": "MIT",
-    "version": "v1.0.1",
+    "version": "v1.0.2",
     "minimum-stability": "dev",
     "authors": [
         {
