@@ -8,6 +8,7 @@
     background-color: #fff;
     padding: 1.5rem;
     padding-top: 0;
+    overflow: auto;
     transform: translateX(0px);
     transition: transform 0.2s ease-in-out;
 }
