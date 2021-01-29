@@ -50,14 +50,20 @@ class CrudiDataTable extends DataTable
     public function html()
     {
         $table_name = strtolower(Str::plural(str_replace('App\Models\\','',$this->model)));
-        return $this->builder()
+        $datatable_options = $this->model::dataTableOptions();
+        $builder = $this->builder()
             ->addTableClass('table table-striped table-responsive w-100')
-
             ->setTableId("$table_name-table")
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->dom('Bfrtip')
-                    ->orderBy(1);
+                    ->dom('Bfrtip');
+        if (isset($datatable_options['page_length']))
+            $builder->pageLength((int) $datatable_options['page_length']);
+        if (isset($datatable_options['ordering']))
+            $builder->orderBy($datatable_options['ordering']['by'],$datatable_options['ordering']['direction']??"ASC");
+        else
+            $builder->orders(1);
+        return $builder;
     }
 
 
