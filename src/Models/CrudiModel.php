@@ -31,6 +31,15 @@ abstract class CrudiModel extends Model
          return $arr;
      }
 
+
+     public static function dataTableOptions()
+     {
+         $arr = (new Static())->dataTableOptions;
+         return $arr;
+     }
+
+
+
      private static function actionsHTML()
      {
          $container_start = '<div class="btns d-flex">';
