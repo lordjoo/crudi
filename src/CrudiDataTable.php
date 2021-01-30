@@ -62,7 +62,7 @@ class CrudiDataTable extends DataTable
         if (isset($datatable_options['ordering']))
             $builder->orderBy($datatable_options['ordering']['by'],$datatable_options['ordering']['direction']??"ASC");
         else
-            $builder->orders(1);
+            $builder->orderBy(1);
         return $builder;
     }
 
