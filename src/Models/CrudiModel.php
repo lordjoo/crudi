@@ -10,6 +10,8 @@ abstract class CrudiModel extends Model
 
      protected $dataTable = [['data'=>'id','title'=>"ID"]];
 
+     protected $dataTableOptions = [];
+
      public function getFields()
      {
          return $this->fields;
