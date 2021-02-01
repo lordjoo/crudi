@@ -33,6 +33,7 @@
         }
     </style>
     <link rel="icon" href="{{ config('crudi.favicon_path') }}">
+    @stack("css")
 </head>
 
 <body class="grey lighten-3">
