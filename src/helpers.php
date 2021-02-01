@@ -9,7 +9,7 @@ function storeImg ($model, Request $request)
     try {
         $image = new Image();
         $file = Storage::disk('local')
-            ->putFileAs(strtolower($model) . "/", $request->file('img_id'), time() . "_$model." . $request->file('img_id')->getClientOriginalName());
+            ->putFileAs(strtolower($model) . "/", $request->file('img_id'), time() . "_" . $request->file('img_id')->getClientOriginalName());
         $image->path = $file;
         $image->url = Storage::disk('local')->url($file);
         $image->save();
