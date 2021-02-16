@@ -118,9 +118,9 @@ class Post extends CrudiModel
             'col'=>'body'
         ],
         [
-            'type'=>"file",
+            'type'=>"image",
             "accept"=>"img",
-            'name'=>"Pst Thumbnail",
+            'name'=>"Post Thumbnail",
             'col'=>'img_id'
         ],
         [
@@ -135,6 +135,8 @@ class Post extends CrudiModel
 
 The Only thing need explanation is ```relation_select```  type in the field types, <br>
 As you see we define a field called Category refers to the category)id column and this field is a relation_select, This means that you will find a select box having all items in the categories_table (relation) to choose the category_id which will be attached to the post 
+
+Another thing here is the *Post Image* field, Crudi has a built in upload image function so if any of your columns shoud be a image just make the type image and crudi will take care of validating and uploading the iamge Note that that all images is stored in ```images table``` and releated by img_id as showen 
 
 * NOW if you saved and go back to the posts/create ou will find the inputs to supply your datat 
 
