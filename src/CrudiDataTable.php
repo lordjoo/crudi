@@ -22,7 +22,11 @@ class CrudiDataTable extends DataTable
         if (count($this->model::getCustomDatatableCols())){
             foreach ($this->model::getCustomDatatableCols() as $custom) {
                 $table->editColumn($custom['col'],function ($i) use ($custom) {
-                    $data = $i->{$custom['relation']}->{$custom['relation_col']};
+                    if (isset($custom['relation_col']) && !empty($custom['relation_col'])){
+                        $data = $i->{$custom['relation']}->{$custom['relation_col']};
+                    } else {
+                        $data = $i->{$custom['relation']};
+                    }
                     if (isset($custom['custom_output'])){
                         return str_replace(':data',$data,$custom['custom_output']);
                     } else {
