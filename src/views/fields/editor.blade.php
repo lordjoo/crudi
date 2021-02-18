@@ -12,7 +12,7 @@
             contextmenu:"link table configurepermanentpen",
             image_advtab: true,
             relative_urls: false,
-            quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+            quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote',
             plugins: 'preview fullpage searchreplace autolink visualblocks visualchars image link media table charmap hr pagebreak nonbreaking anchor lists textcolor wordcount tinymcespellchecker imagetools mediaembed quickbars linkchecker contextmenu colorpicker',
             toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link image | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
             image_advtab: true,
