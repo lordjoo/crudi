@@ -9,7 +9,7 @@
             path_absolute: "/admin/",
             selector: '#{{$c}}',
             height: 500,
-            contextmenu:"link image imagetools table configurepermanentpen",
+            contextmenu:"link imagetools table configurepermanentpen",
             image_advtab: true,
             relative_urls: false,
             quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
