@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 1.0.7
+Update TinyMce Config values  
+
 # In version 1.0.6
 Now if you append in a Modal like this sample 
 ```
