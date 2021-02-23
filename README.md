@@ -18,7 +18,7 @@ A laravel package that implements a ready-made Admin panel with a CRUD System
 * then you need to run ```php artisan migrate``` to create the images table (this tables used to store any king of images related one-to-one to any other modals)
 
 ### How it's working ?
-This library depends on **tow** main things 
+This library depends on **two** main things 
 1. CrudiControllerTrait  
 
 We made a trait with all the CRUD Logic and made it available to use in any controller 
