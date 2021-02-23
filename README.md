@@ -20,15 +20,18 @@ A laravel package that implements a ready-made Admin panel with a CRUD System
 ### How it's working ?
 This library depends on **tow** main things 
 1. CrudiControllerTrait  
- We made a trait with all the CRUD Logic and made it available to use in any controller 
-2. the CrudiModal 
- In order to make the CRUD Operations much smoother we made a Custom abstract class called CrudiModal this class extends the Laravel Modal base class 
+
+We made a trait with all the CRUD Logic and made it available to use in any controller 
+
+2. the CrudiModal  <!-- you must fix it -->
+ 
+In order to make the CRUD Operations much smoother we made a Custom abstract class called CrudiModel this class extends the Laravel Model base class 
 
 ### Get Started
 Will assume that we have a blog and we need to use Crudi to handle the post CRUD Operations .<br>
-* First of all we will create the Post Modal,Controller and migration
+* First of all we will create the Post Model,Controller and migration
 ```bash
-php artisan make:modal Post -m -c
+php artisan make:model Post -mc
 ```
 * After this we will go to the ```PostController.php``` and use the CrudiControllerTrait, The Controller should be look like that 
 ```php
@@ -44,7 +47,7 @@ class PostController extends Controller
     use CrudiControllerTrait;
 }
 ```
-* Then we have to edit the Post Modal at ```Post.php`` located in Modals directory and make it look like this 
+* Then we have to edit the Post Model at ```Post.php`` located in Models directory and make it look like this 
 ```php
 <?php
 
@@ -79,11 +82,11 @@ The first param is the route prefix, Second for the route name prefix, and the l
 | {prefix}/delete/{?id}  | GET  | Controlller@delete | .delete |
 
 * Now, We have to define some REQUIRED Properties in the PostController 
-  - ```private $model = App\Modals\Post::class```  this will hold the associated Modal for this Controller
+  - ```private $model = App\Models\Post::class```  this will hold the associated Model for this Controller
   - ```private $route = "posts"``` this will hold the route name which we had just add as the second param in the Route::crudi macro     
 
 NOW We almost finish, You can go to ```http://localhost:8001/posts/create``` and you will get the add post page , But the page will be empty 
-You need to define the field of the post, We will do this by going to the PostModal and add a 
+You need to define the field of the post, We will do this by going to the PostModel and add a 
 **protected**  property called **fields**  this property will be of 2D Array type with this shape 
 ```php
 <?php
@@ -145,12 +148,12 @@ But How to show all other values of each post ?
 
 We simple doing this by defining another **protected** called $4datatable
 <br>
-**NOTE Crudi USES LARAVEL DATATABLES To Generate the {modal}/ page**
+**NOTE Crudi USES LARAVEL DATATABLES To Generate the {modae}/page**
 
 
 ## Datatables Control
 Crudi uses datatables to list ahd show the data in the dashboard, Crudi uses a **protected**
- property called ```$dataTable``` in the Modal Class to determine what to list and how to list it   
+ property called ```$dataTable``` in the Model Class to determine what to list and how to list it   
 
 In our example we will write the $datatable property to list the post title, thumbnail and the category 
 
