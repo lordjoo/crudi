@@ -67,7 +67,7 @@ class Post extends CrudiModel
 
 So Open the web.php and add this line 
 ```php
-Route::crudi('posts', 'posts.',\App\Http\Controllers\PostController::class);
+Route::crudi('posts', 'posts',\App\Http\Controllers\PostController::class);
 ```
 The first param is the route prefix, Second for the route name prefix, and the last one for the target Controller 
 ,Crudi will generate the following routes for you 
