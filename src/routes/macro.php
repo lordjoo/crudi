@@ -7,7 +7,7 @@ if (!Route::hasMacro("crudi")){
     Route::macro('crudi',function ($prefix, $as, $controller, $middleware = 'web') {
         Route::group([
             'prefix'=>$prefix,
-            "as"=>$as,
+            "as"=>$as.'.',
             "middleware"=>$middleware,
         ],function () use ($controller) {
             Route::get('/',[$controller,'all'])->name('all');

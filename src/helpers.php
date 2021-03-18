@@ -8,12 +8,12 @@ if (!function_exists("storeImg")){
     function storeImg ($model, Request $request)
     {
         $request->validate([
-            "img_id"=>["mimes:jpeg,bmp,png,jpg"]
+            "image_id"=>["mimes:jpeg,bmp,png,jpg"]
         ]);
         try {
             $image = new Image();
             $file = Storage::disk('public')
-                ->putFileAs(strtolower($model) . "/", $request->file('img_id'), time() . "_" . $request->file('img_id')->getClientOriginalName());
+                ->putFileAs(strtolower($model) . "/", $request->file('image_id'), time() . "_" . $request->file('image_id')->getClientOriginalName());
             $image->path = $file;
             $image->url = Storage::disk('public')->url($file);
             $image->save();
@@ -25,8 +25,8 @@ if (!function_exists("storeImg")){
 }
 
 if (!function_exists("deleteImg")){
-    function deleteImg($img_id){
-        $img = Image::find($img_id);
+    function deleteImg($image_id){
+        $img = Image::find($image_id);
         if (!$img){
             return null;
         }

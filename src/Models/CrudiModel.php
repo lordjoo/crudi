@@ -1,6 +1,7 @@
 <?php
 namespace Lordjoo\Crudi\Models;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 abstract class CrudiModel extends Model
 {
@@ -14,6 +15,12 @@ abstract class CrudiModel extends Model
 
      public function getFields()
      {
+         if (!count($this->fields))
+         {
+             $columns = \Schema::getColumnListing($this->getTable());
+             $columns = array_diff($columns,['id','created_at','updated_at','deleted_at']);
+             return  $columns;
+         }
          return $this->fields;
      }
 

@@ -21,7 +21,7 @@
                     <div class="dropdown-menu dropdown-menu-md-right dropdown-menu-right dropdown-dark"
                          aria-labelledby="navbarDropdownMenuLink-55">
                         <a onclick="document.getElementById('logout_form').submit()" class="dropdown-item">Log Out</a>
-                        <form id="logout_form" method="POST" action="{{ route('admin.logout') }}">@csrf</form>
+                        <form id="logout_form" method="POST" action="">@csrf</form>
                     </div>
                 </li>
             </ul>
