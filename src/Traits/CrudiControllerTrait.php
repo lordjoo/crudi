@@ -3,7 +3,7 @@
 
 namespace Lordjoo\Crudi\Traits;
 
-use App\Exceptions\CrudiException;
+use Lordjoo\Crudi\Exceptions\CrudiException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Lordjoo\Crudi\CrudiDataTable;

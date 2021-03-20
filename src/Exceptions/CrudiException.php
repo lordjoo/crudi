@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace Lordjoo\Crudi\Exceptions;
 
 use Exception;
 
