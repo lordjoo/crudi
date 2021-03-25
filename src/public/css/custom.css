@@ -1,0 +1,13 @@
+.c-sidebar-nav-icon {
+    -ms-flex: 0 0 56px;
+    flex: 0 0 56px;
+    height: auto;
+    margin-left: 0!important;
+    font-size: 1.59375rem;
+    text-align: center;
+    transition: .3s;
+    fill: currentColor;
+}
+.c-icon {
+    height: auto !important;
+}
