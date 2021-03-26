@@ -38,7 +38,7 @@ class CrudiServiceProvider extends ServiceProvider
 
         $this->loadMigrationsFrom(__DIR__.'/migrations');
 
-        $this->loadViewsFrom(__DIR__.'/views', 'crudi');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'crudi');
         $this->publishes([
             __DIR__.'/resources/views' => resource_path('views/vendor/crudi'),
         ]);
