@@ -44,7 +44,7 @@
         </main>
 
         <footer class="c-footer">
-            <div><a href="https://uni-devs.tech">UniDevs</a> © {{ date('Y') }}.</div>
+            <div>Powered by Crudi | {{ config('crudi.site_name') }} © {{ date('Y') }}.</div>
         </footer>
     </div>
 </div>
