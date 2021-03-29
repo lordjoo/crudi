@@ -1,3 +1,11 @@
+@php
+$menu_file = config('crudi.menu_dir_path').'/account_dropdpwn.php';
+if (file_exists($menu_file)) {
+    $menu = require_once $menu_file;
+} else {
+    $menu = [];
+}
+@endphp
 <header class="c-header c-header-light c-header-fixed">
     <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar"
             data-class="c-sidebar-show">
@@ -34,12 +42,14 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right pt-0">
                 <div class="dropdown-header bg-light py-2"><strong>@lang("crudi::main.account")</strong></div>
-                <a class="dropdown-item" href="#">
+                @foreach($menu as $item)
+                <a class="dropdown-item" href="{{ $item['route'] }}">
                     <span class="c-icon mfe-2">
-                        <span class="mdi mdi-logout"></span>
+                        <span class="{{ $item['icon'] }}"></span>
                     </span>
-                    @lang("crudi::main.logout")
+                    {{ $item['title'] }}
                 </a>
+                @endforeach
             </div>
         </li>
     </ul>
