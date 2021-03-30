@@ -1,5 +1,5 @@
 @php
-$menu_file = config('crudi.menu_dir_path').'/account_dropdpwn.php';
+$menu_file = config('crudi.menu_dir_path').'/account_dropdown.php';
 if (file_exists($menu_file)) {
     $menu = require_once $menu_file;
 } else {
