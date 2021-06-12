@@ -14,7 +14,7 @@ if (file_exists($menu_file)) {
         </svg>
     </button>
     <a class="c-header-brand d-lg-none c-header-brand-sm-up-center" href="{{ config('crudi.home_url','/admin') }}">
-       <img src='{{ config('crudi.logo_path') }}' />
+       <img height="25" src='{{ config('crudi.logo_path_2') }}' />
     </a>
 
 
